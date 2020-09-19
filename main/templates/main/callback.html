@@ -1,0 +1,51 @@
+{% extends 'main/base.html' %}
+{% block title %} CALLBACK {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class='container'>
+        <div class='row justify-content-center'>
+            <div class='col-12'>
+                <h1 style='text-align:center;'> CALLBACK MESSAGE</h1>
+            </div>
+        </div>
+
+        {% if error %}
+            <h1>{{ error }}</h1>
+        {% endif %}
+
+        <div class='row justify-content-center'>
+            <div class='col-12'>
+                <h3>Chedksum Verification: {{ message }}</h3>
+                <h3>MID: {{ MID }}</h3>
+                <h3>ORDERID: {{ ORDERID }}</h3>
+                <h3>BANKTXTID: {{ BANKTXNID }}</h3>
+                <h3>TXNAMOUNT: {{ TXNAMOUNT }}</h3>
+                <h3>STATUS: {{ STATUS }}</h3>
+                <h3>RESPCODE: {{ RESPCODE }}</h3>
+                <h3>RESPMSG {{ RESPMSG }}</h3>
+                <h3>TXNDATE: {{ TXNDATE }}</h3>
+                <h3>GATEWAYNAME: {{ GATEWAYNAME }}</h3>
+                <h3>BANKNAME: {{ BANKNAME }}</h3>
+                <h3>BIN_NAME: {{ BIN_NAME }}</h3>
+                <h3>PAYMENT_MODE: {{ PAYMENT_MODE }}</h3>
+                <h3>CHEKCSUMHASH: {{ CHECKSUMHASH }}</h3>
+            </div>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+                <br><br>
+                <div class="alert alert-{{ message.tags }} alert-dismissible text-center">
+                    <h3 id='message'>&nbsp;&nbsp;{{ message }}</h3>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <!-- !Disclaimer - you must not use this website's template in as it is form - please feel free 
+    to contact me @ chiragchauhan12323@gmail.com for the source code and implementation in your use case -
+    After all I too did take some help from the community -->
+
+{% endblock %}

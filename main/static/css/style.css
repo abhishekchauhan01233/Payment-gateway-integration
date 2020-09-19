@@ -1,0 +1,50 @@
+.navbar{
+    background-color:#121212;
+    color: floralwhite;
+}
+
+#link{
+    color:black;
+}
+
+.row{
+    padding: 20px 0px 0px 0px;
+}
+
+.row-header{
+    margin:0px auto;
+    padding: 100px 0px 50px 0px;
+}
+
+.row-content{
+    margin: 0px auto;
+    padding: 50px 0px 50px 0px;
+    border-bottom: 1px ridge;
+    min-height: 400px;
+}
+
+/* Homepage Images */ 
+#view{
+    height:180px; 
+    width:320px;   
+}
+
+#transfer{
+    height:180px; 
+    width:340px;   
+}
+
+#history{
+    height:180px; 
+    width:180px;   
+}
+
+/* Table Row */
+tr{
+    text-align:center;
+}
+
+/* Modals */
+.modal-header, .modal-body{
+    background-color: #eeeeee;
+}

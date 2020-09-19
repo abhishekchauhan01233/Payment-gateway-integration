@@ -1,0 +1,56 @@
+{% extends 'main/base.html' %}
+{% block title %} REDIRECT{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class='container'>
+        <div class='row justify-content-center'>
+            <div class='col-12'>
+                <h1 style='text-align:center;'> REDIRECT</h1>
+            </div>
+        </div>
+
+        {% if error %}
+            <h1>{{ error }}</h1>
+        {% endif %}
+
+        <div class='row justify-content-center'>
+            <div class='col-12'>
+                <form method='POST' action="https://securegw-stage.paytm.in/order/process/" name="f1">
+                    <table>
+                        <tbody>
+                            <input type="hidden" name="MID" value="{{ MID }}">
+                            <input type="hidden" name="WEBSITE" value="{{ WEBSITE }}">
+                            <input type="hidden" name="ORDER_ID" value="{{ ORDER_ID }}">
+                            <input type="hidden" name="CUST_ID" value="{{ CUST_ID }}">
+                            <input type="hidden" name="INDUSTRY_TYPE_ID" value="{{ INDUSTRY_TYPE_ID }}">
+                            <input type="hidden" name="CHANNEL_ID" value="{{ CHANNEL_ID }}">
+                            <input type="hidden" name="TXN_AMOUNT" value="{{ TXN_AMOUNT }}">
+                            <input type="hidden" name="CALLBACK_URL" value="{{ CALLBACK_URL }}">
+                            <input type="hidden" name="CHECKSUMHASH" value="{{ CHECKSUMHASH }}">
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+                <br><br>
+                <div class="alert alert-{{ message.tags }} alert-dismissible text-center">
+                    <h3 id='message'>&nbsp;&nbsp;{{ message }}</h3>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <script type="text/javascript">
+        document.f1.submit();
+    </script>
+    <!-- !Disclaimer - you must not use this website's template in as it is form - please feel free 
+    to contact me @ chiragchauhan12323@gmail.com for the source code and implementation in your use case -
+    After all I too did take some help from the community -->
+
+{% endblock %}

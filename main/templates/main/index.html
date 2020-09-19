@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+{% block title %} LET'S DONATE {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+    <div class='container'>
+        <div class='row justify-content-center'>
+            <div class='col-12'>
+                <h1 style='text-align:center;'> LET'S DONATE</h1>
+            </div>
+        </div>
+
+        {% if error %}
+            <h1>{{ error }}</h1>
+        {% endif %}
+
+        <div class='row justify-content-center'>
+            <div class='col-12 col-sm-8'>
+                <form method='POST'>
+                {% csrf_token %}
+                    <div class="form-group row">
+                        <label for="name" class="col-md-2 col-form-label">Name</label>
+                        <div class='col-md-10'>
+                            <input type='text' class="form-control" id="name" name="name" placeholder="Full Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="phone" class="col-md-2 col-form-label">Phone</label>
+                        <div class='col-md-10'>
+                            <input type='number' class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="email" class="col-md-2 col-form-label">Email</label>
+                        <div class='col-md-10'>
+                            <input type='email' class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="phone" class="col-md-2 col-form-label">Amount</label>
+                        <div class='col-md-10'>
+                            <input type='number' class="form-control" id="amount" name="amount" placeholder="Amount (Rs.)">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class='col-12'>
+                            <button style='float:right;' type='submit' name='save' value='save' class='btn btn-info'>Donate</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% if messages %}
+            {% for message in messages %}
+                <br><br>
+                <div class="alert alert-{{ message.tags }} alert-dismissible text-center">
+                    <h3 id='message'>&nbsp;&nbsp;{{ message }}</h3>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <!-- !Disclaimer - you must not use this website's template in as it is form - please feel free 
+    to contact me @ chiragchauhan12323@gmail.com for the source code and implementation in your use case -
+    After all I too did take some help from the community -->
+
+{% endblock %}
