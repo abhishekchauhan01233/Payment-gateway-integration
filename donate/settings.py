@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 't)zrzi!eg&z=)_323wdk(xtzkpqz7bb)@i+$^5(zzyyj+g#^x7'
+SECRET_KEY = '-@tkpj+0-7ry01nid_fadaazw^t(a7k@r+y489y7=_9^+!r3ja'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,6 +31,12 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
+PAYTM_MERCHANT_ID = 'FLYCzc66713919631214'
+PAYTM_SECRET_KEY = 'L0BT5Z@tSUzmufNC'
+PAYTM_WEBSITE = 'WEBSTAGING'
+PAYTM_CHANNEL_ID = 'WEB'
+PAYTM_INDUSTRY_TYPE_ID = 'Retail'
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,8 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
     'main.apps.MainConfig',
-    'import_export',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -51,12 +58,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
-PAYTM_MERCHANT_ID = 'FLYCzc66713919631214'
-PAYTM_SECRET_KEY = 'L0BT5Z@tSUzmufNC'
-PAYTM_WEBSITE = 'WEBSTAGING'
-PAYTM_CHANNEL_ID = 'WEB'
-PAYTM_INDUSTRY_TYPE_ID = 'Retail'
 
 ROOT_URLCONF = 'donate.urls'
 
